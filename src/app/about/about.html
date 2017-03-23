@@ -1,0 +1,16 @@
+<div style="margin:100px">
+	<input type="checkbox" ng-click="toggleSpeech()" ng-model="isSpeechModeOn" ng-checked="isSpeechModeOn" style="margin-left:500px;margin-bottom:10px"><span>speech</span>
+    <div style="text-align:center">
+        <input ng-model="input" style="width:300px;height:26px">
+        <button type="submit" class="btn-primary" ng-click="addTask(input)" style="width:100px">Add</button>
+    </div>
+    <div style="margin-left:500px;margin-top:10px">
+    	<button type="submit" class="btn-success" ng-click="clearTask()" style="width:200px">Clear Selected</button>
+    </div>
+    <div style="margin-left:500px;margin-top:15px">
+        <div ng-repeat="task in tasks">
+            <input type="checkbox" ng-checked="task.isChecked" ng-click="toggle($index)">
+            <span ng-bind="task.value"></span>
+        </div>
+    </div>
+</div>
